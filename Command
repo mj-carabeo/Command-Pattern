@@ -1,4 +1,10 @@
 interface Command {
     void execute();
     void undo();
+    void increaseBrightness();
+    void decreaseBrightness();
+    void turnOnMusic();
+    void turnOffMusic();
+    void increaseVolume();
+    void decreaseVolume();
 }
