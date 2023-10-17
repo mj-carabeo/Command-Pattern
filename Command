@@ -1,3 +1,4 @@
-interface Device {
+packageCommandPattern;
+public interface Device {
     Action getAction();
 }
