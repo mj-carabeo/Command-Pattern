@@ -1,3 +1,4 @@
+package CommandPattern;
 class Action {
     private String name;
 
