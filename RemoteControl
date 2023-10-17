@@ -1,5 +1,5 @@
 package CommandPattern;
-class Action {
+public class RemoteControl {
     private String name;
 
     public Action(String name) {
