@@ -1,16 +1,23 @@
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Device[] devices = new Device[] {
+            new Light(),
+            new MusicPlayer(),
+            new Thermostat()
+        };
+        String[] deviceNames = new String[] {
+            "Light",
+            "Music Player",
+            "Thermostat"
+        };
         while (true) {
-            System.out.println("Select an option:");
-            System.out.println("1. Light");
-            System.out.println("2. Music Player");
-            System.out.println("3. Thermostat");
-            System.out.println("4. Exit");
-            int option = scanner.nextInt();
-            if (option == 4) {
+            System.out.println("Select a device:");
+            for (int i = 0; i < deviceNames.length; i++) {
+                System.out.println((i + 1) + ". " + deviceNames[i]);
+            }
+            int deviceIndex = scanner.nextInt() - 1;
+            if (deviceIndex < 0 || deviceIndex >= devices.length) {
                 break;
             }
             System.out.println("Select an action:");
@@ -19,41 +26,24 @@ public class Main {
             System.out.println("3. Increase");
             System.out.println("4. Decrease");
             int action = scanner.nextInt();
-            switch (option) {
+            switch (action) {
                 case 1:
-                    performAction("Light", action);
+                    devices[deviceIndex].turnOn();
                     break;
                 case 2:
-                    performAction("Music Player", action);
+                    devices[deviceIndex].turnOff();
                     break;
                 case 3:
-                    performAction("Thermostat", action);
+                    devices[deviceIndex].increase();
+                    break;
+                case 4:
+                    devices[deviceIndex].decrease();
                     break;
                 default:
-                    System.out.println("Invalid option.");
+                    System.out.println("Invalid action.");
                     break;
             }
         }
         scanner.close();
-    }
-
-    private static void performAction(String device, int action) {
-        switch (action) {
-            case 1:
-                System.out.println(device + " turned on.");
-                break;
-            case 2:
-                System.out.println(device + " turned off.");
-                break;
-            case 3:
-                System.out.println(device + " increased.");
-                break;
-            case 4:
-                System.out.println(device + " decreased.");
-                break;
-            default:
-                System.out.println("Invalid action.");
-                break;
-        }
     }
 }
