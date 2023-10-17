@@ -1,4 +1,4 @@
-class Thermostat implements Device {
+public class Thermostat implements Device {
     private Action action = new Action("Thermostat");
     public Action getAction() { return action; }
 }
