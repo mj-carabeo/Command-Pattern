@@ -1,4 +1,5 @@
 import java.util.Scanner;
+package CommandPattern;
 
 public class Main {
     public static void main(String[] args) {
@@ -30,16 +31,16 @@ public class Main {
             int action = scanner.nextInt();
             switch (action) {
                 case 1:
-                    devices[deviceIndex].turnOn();
+                    devices[deviceIndex].getAction().turnOn();
                     break;
                 case 2:
-                    devices[deviceIndex].turnOff();
+                    devices[deviceIndex].getAction().turnOff();
                     break;
                 case 3:
-                    devices[deviceIndex].increase();
+                    devices[deviceIndex].getAction().increase();
                     break;
                 case 4:
-                    devices[deviceIndex].decrease();
+                    devices[deviceIndex].getAction().decrease();
                     break;
                 default:
                     System.out.println("Invalid action.");
