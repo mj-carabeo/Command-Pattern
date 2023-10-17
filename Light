@@ -1,0 +1,4 @@
+public class Light implements Device {
+    private Action action = new Action("Light");
+    public Action getAction() { return action; }
+}
