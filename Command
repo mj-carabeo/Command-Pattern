@@ -1,27 +1,3 @@
 interface Device {
-    void turnOn();
-    void turnOff();
-    void increase();
-    void decrease();
-}
-
-class Light implements Device {
-    public void turnOn() { System.out.println("Light turned on."); }
-    public void turnOff() { System.out.println("Light turned off."); }
-    public void increase() { System.out.println("Light brightness increased."); }
-    public void decrease() { System.out.println("Light brightness decreased."); }
-}
-
-class MusicPlayer implements Device {
-    public void turnOn() { System.out.println("Music Player turned on."); }
-    public void turnOff() { System.out.println("Music Player turned off."); }
-    public void increase() { System.out.println("Music Player volume increased."); }
-    public void decrease() { System.out.println("Music Player volume decreased."); }
-}
-
-class Thermostat implements Device {
-    public void turnOn() { System.out.println("Thermostat turned on."); }
-    public void turnOff() { System.out.println("Thermostat turned off."); }
-    public void increase() { System.out.println("Thermostat temperature increased."); }
-    public void decrease() { System.out.println("Thermostat temperature decreased."); }
+    Action getAction();
 }
