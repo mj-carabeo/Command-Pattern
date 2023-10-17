@@ -1,0 +1,4 @@
+public class MusicPlayer implements Device {
+    private Action action = new Action("Music Player");
+    public Action getAction() { return action; }
+}
